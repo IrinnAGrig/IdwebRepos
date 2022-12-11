@@ -1,8 +1,110 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+     /*                              CUBE                              */
+.cube {
+     margin: 4rem;
+     
+     width: 150.5px;
+     height: 150.5px;
+     transform-style: preserve-3d;
+     animation: animate 4s linear infinite;
+}
 
+@@keyframes animate {
+     0% {
+          transform: rotateX(-30deg) rotateY(0deg);
+     }
+
+     100% {
+          transform: rotateX(-30deg) rotateY(360deg);
+     }
+}
+
+.cube div {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     transform-style: preserve-3d;
+}
+
+     .cube div span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(#151515, var(--color-light));
+          transform: rotateY(calc(90deg * var(--i))) translateZ(75px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform-style: preserve-3d;
+     }
+
+     .cube div h2 {
+          position: absolute;
+          font-size: 3rem;
+          color: black;
+          transform: translateZ(25px);
+     }
+
+.top {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 150.5px;
+     height: 150.5px;
+     background: #222;
+     transform: rotateX(90deg) translateZ(75px);
+}
+
+     .top::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 150px;
+          height: 150px;
+          background: var(--color-light);
+          transform: translateZ(-180px);
+          filter: blur(20px);
+          box-shadow: 0 0 120px rgba(0, 255, 0, 0.2), 0, 0, 200px, rgba(0, 255, 0, 0.4), 0, 0, 300px, rgba(0, 255, 0, 0.6), 0, 0, 400px, rgba(0, 255, 0, 0.8), 0, 0, 500px, rgba(0, 255, 0, 1);
+     }
+.item-data{
+     display: flex;
+     justify-context: space-between;
+     align: center;
+     text-align: center;
+}
+</style>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+   
+    <div class="item-data">
+          <div class="cube">
+               <div class="top"></div>
+               <div>
+                    <span style="--i:0;">
+                         <h2>IDWeb</h2>
+                    </span>
+                    <span style="--i:1;">
+                         <h2>IDWeb</h2>
+                    </span>
+                    <span style="--i:2;">
+                         <h2>IDWeb</h2>
+                    </span>
+                    <span style="--i:3;">
+                         <h2>IDWeb</h2>
+                    </span>
+               </div>
+           </div>
+           <div style="margin-left: 150px;margin-top:0px;">
+               <h1 class="display-4">Hello, Irina Grigoras</h1>
+               <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+           </div>
+      </div>
+         
 </div>
